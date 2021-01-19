@@ -13,11 +13,16 @@
     <link rel="stylesheet" href="" />
   </head>
   <body>
+  <a href="{% url 'leads:lead-create' %}">create aa new lead</a>
     <h1>all leads</h1>
     <ul>
       {% for lead in leads %}
       <li>
-        <a href="/leads/{{lead.id}}">{{ lead }}</a>
+        <a href="{% url 'leads:lead-detail' lead.pk %}">{{ lead }}</a>
+        </br>
+        </br>
+
+
       </li>
       {% endfor %}
     </ul>
