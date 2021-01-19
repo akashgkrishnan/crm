@@ -13,13 +13,13 @@
     <link rel="stylesheet" href="" />
   </head>
   <body>
-  <a href="/leads">go back</a>
+  <a href="{% url 'leads:lead-list'%}">go back</a>
     <h1>lead info {{lead}}</h1>
     lead first name : {{lead.first_name}} age: {{lead.age}} agent: {{lead.agent}}
   </br>
   </br>
-            <a href="/leads/update/{{lead.id}}">update</a>
-        <a href="/leads/delete/{{lead.id}}">delete</a>
+            <a href="{% url 'leads:lead-update' lead.id %}">update</a>
+        <a href="{% url 'leads:lead-delete' lead.id %}">delete</a>
         </br>
         </br>
 

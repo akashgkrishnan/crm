@@ -7,6 +7,6 @@ urlpatterns = [
     path('', lead_list, name='lead-list'),
     path('create/', lead_create, name='lead-create'),
     path('<int:pk>/', lead_detail, name='lead-detail'),
-    path('update/<int:pk>/', lead_update),
-    path('delete/<int:pk>/', lead_delete),
+    path('update/<int:pk>/', lead_update ,name='lead-update'),
+    path('delete/<int:pk>/', lead_delete, name='lead-delete'),
 ]
