@@ -1,21 +1,8 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>lead detail</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
-  </head>
-  <body>
+{% extends 'base.html' %} 
+{% block content %}
   <a href="{% url 'leads:lead-list'%}">go back</a>
     <h1>lead info {{lead}}</h1>
-    lead first name : {{lead.first_name}} age: {{lead.age}} agent: {{lead.agent}}
+     first name : {{lead.first_name}} age: {{lead.age}} agent: {{lead.agent}}
   </br>
   </br>
             <a href="{% url 'leads:lead-update' lead.id %}">update</a>
@@ -23,6 +10,7 @@
         </br>
         </br>
 
-    <script src="" async defer></script>
-  </body>
-</html>
+{% endblock content %}
+
+
+
