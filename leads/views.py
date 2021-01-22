@@ -44,6 +44,7 @@ class LeadDetailView(DetailView):
 
 def lead_create(request):
     form = LeadModelForm()
+    
     if request.method == 'POST':
         form = LeadModelForm(request.POST)
         if form.is_valid():
