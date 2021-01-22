@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView
 from django.views.generic.edit import DeleteView
-
+from django.core.mail import send_mail
 from .models import Lead, Agent
 from .forms import LeadForm, LeadModelForm
 
@@ -61,6 +61,14 @@ class LeadCreateView(CreateView):
 
     def get_success_url(self) -> str:
         return reverse("leads:lead-list")
+
+    def form_valid(self, form):
+        send_mail(
+            subject='hi user',
+            message='new user has been added',
+            from_email='akash@123.com',
+            recipient_list=['test2@tes.com'])
+        return super(LeadCreateView, self).form_valid(form)
 
 
 def lead_update(request, pk):
