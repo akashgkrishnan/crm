@@ -10,6 +10,7 @@ urlpatterns = [
     # path("", landing_page, name="landing-page"),
     path("", LandingPageView.as_view(), name="landing-page"),
     path('leads/', include('leads.urls', namespace="leads")),
+    path('agents/', include('agents.urls', namespace="agents")),
     path("login/", LoginView.as_view(), name='login'),
     path("logout/", LogoutView.as_view(), name='logout'),
     path('signup', SignUpView.as_view(), name='sign-up'),
